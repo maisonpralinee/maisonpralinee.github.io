@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Pralinee</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <script>
+    var app = function () {
+        var loading = document.getElementById("loading");
+        var loaded = document.getElementById("loaded");
+
+        setTimeout(function() {
+            loading.style.display = "none";
+            loaded.style.display = "block";
+        },1500);
+    } 
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <link href="css/normalize.min.css" rel="stylesheet">
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            background-color: #1a1a1a;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: #e0e0e0;
+        }
+
+        body {
+            background-image: url('poster.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #loading {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #1a1a1a;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        #loading .logo, #loading img {
+            border: 0;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .logo {
+            padding: 5px;
+            display: inline-block;
+            border-radius: 50%;
+        }
+
+        .logo img {
+            position: relative;
+            display: inline-block;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-image: url('img/logo.png');
+            background-size: cover;
+            margin: 0 auto 20px auto;
+        }
+
+        .username {
+            color: #e0e0e0;
+            margin-bottom: 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .bio {
+            font-weight: bold;
+        }
+
+        .link-container {
+            padding: 0 20px 20px 20px;
+            border-radius: 10px;
+        }
+
+        p.subtitles {
+            font-size: 18px; 
+            font-style: italic;
+            color: #fcfcfc; 
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #000000;
+            margin: 40px 0 20px 0;
+        }
+
+        a {
+            display: block;
+            background-color: #2c2c2c;
+            color: #fff;
+            text-align: center;
+            padding: 15px 25px;
+            margin: 10px 0;
+            border-radius: 10px;
+            text-decoration: none;
+            min-width: 400px; 
+            max-width: 90%;  
+            width: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="loading">
+        <div class="container">
+            <p class="logo">
+              <img src="img/logo.png">
+            </p>
+            <p class="center">LOADING</p>
+        </div>
+    </div>
+
+    <div id="loaded" style="display:none;">
+
+        <div class="container">
+            <div class="profile-pic"></div>
+            <div class="username">Maison Pralinee</div>
+            <div class="bio">Music label. Visual experiments.</div>
+            <div class="link-container">
+
+                <p class="subtitles">Artists</p>
+                <div>
+                    <a href="https://instagram.com/panaviscope">Panaviscope</a>
+                    <a href="https://instagram.com/sunnypopclub">Sunny Pop Club</a>
+                </div>
+
+                <p class="subtitles">Social</p>
+                <div>
+                    <a href="https://open.spotify.com/user/31hpdq64qwumycc2gobbdvbzz6pu">Spotify</a>
+                    <a href="https://www.instagram.com/maisonpralinee/">Instagram</a>
+                    <a href="https://www.youtube.com/channel/UCuceFZLLexeI_QJRrTJ9xNQ">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        function init() {
+            if (typeof app === "undefined") {
+                setTimeout(function() {
+                    init();
+                }, 50);
+                return false;
+            }
+            app();
+        }
+        init();
+    })();
+
+    </script>
+</body>
+</html>
