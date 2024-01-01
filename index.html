@@ -7,17 +7,7 @@
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.0-rc.17/dist/cookieconsent.css" />
     <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.0-rc.17/dist/cookieconsent.umd.js"></script>
-    <script>
-    var app = function () {
-        var loading = document.getElementById("loading");
-        var loaded = document.getElementById("loaded");
 
-        setTimeout(function() {
-            loading.style.display = "none";
-            loaded.style.display = "block";
-        },1500);
-    } 
-    </script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
     <link href="css/normalize.min.css" rel="stylesheet">
     
@@ -58,37 +48,6 @@
             background-position: center;
         }
 
-        #loading {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: #1a1a1a;
-            text-align: center;
-            font-size: 18px;
-        }
-
-        #loading .logo, #loading img {
-            border: 0;
-            padding: 0;
-            margin-top: 10px;
-        }
-
-        .logo {
-            padding: 5px;
-            display: inline-block;
-            border-radius: 50%;
-        }
-
-        .logo img {
-            position: relative;
-            display: inline-block;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-        }
-
         .profile-pic {
             width: 100px;
             height: 100px;
@@ -123,7 +82,7 @@
             margin: 40px 0 20px 0;
         }
 
-        a {
+        .link-container a {
             display: block;
             background-color: #2c2c2c;
             color: #fff;
@@ -140,24 +99,16 @@
             box-sizing: border-box;
         }
 
-        a:hover {
+        .link-container a:hover {
             background-color: #555;
         }
 
+        a {
+            color: #fff;
+        }
+
         .container {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.4);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
         }
 
 
@@ -165,16 +116,6 @@
 </head>
 <body>
 
-    <div id="loading">
-        <div class="container">
-            <p class="logo">
-              <img src="img/logo.png">
-            </p>
-            <p class="center">LOADING</p>
-        </div>
-    </div>
-
-    <div id="loaded" style="display:none;">
 
         <div class="container">
             <div class="profile-pic"></div>
@@ -195,28 +136,11 @@
                     <a href="https://www.youtube.com/channel/UCuceFZLLexeI_QJRrTJ9xNQ">YouTube</a>
                 </div>
             </div>
+
+            <p class="center">
+                Operated by <a href="https://howbadprettybad.com">How Bad? Pretty Bad</a>
+            </p>
         </div>
-    </div>
-
-    <p class="center">
-        Operated by <a href="https://howbadprettybad.com">How Bad? Pretty Bad</a>
-    </p>
-
-    <script>
-    (function() {
-        function init() {
-            if (typeof app === "undefined") {
-                setTimeout(function() {
-                    init();
-                }, 50);
-                return false;
-            }
-            app();
-        }
-        init();
-    })();
-    </script>
-
 
     <script>
         CookieConsent.run({
@@ -226,12 +150,11 @@
                     readOnly: true
                 },
                 analytics: {
-                    enabled: false // Désactivez cette catégorie par défaut
+                    enabled: false
                 },
-                // Ajoutez d'autres catégories si nécessaire
             },
             language: {
-                default: 'en', // Set the default language
+                default: 'en',
                 translations: {
                     en: {
                         consentModal: {
@@ -246,11 +169,11 @@
             },
             guiOptions: {
                 consentModal: {
-                    layout: 'cloud', // ou 'bar', selon le style souhaité
-                    position: 'bottom center', // Position du modal
+                    layout: 'cloud', // 'cloud' | 'bar'
+                    position: 'bottom center', // Position
                 },
                 preferencesModal: {
-                    enabled: false // Désactive le modal des préférences
+                    enabled: false
                 }
             }
         });
